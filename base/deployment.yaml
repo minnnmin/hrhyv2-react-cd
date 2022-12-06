@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hrhyv2-react-deploy
+  labels:
+    service: hrhyv2-react
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      service: hrhyv2-react
+  template:
+    metadata:
+      labels:
+        service: hrhyv2-react
+    spec:
+      containers:
+      - name: hrhyv2-react
+        image: 685766701737.dkr.ecr.ap-northeast-1.amazonaws.com/test:latest
+        tty: true
+        ports:
+        - containerPort: 3000
+        env:
+          - name: REACT_APP_BACKEND_URL
+            valueFrom:
+              secretKeyRef:
+                name: hrhyv2-react-secret
+                key: REACT_APP_BACKEND_URL
