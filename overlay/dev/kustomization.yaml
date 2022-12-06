@@ -3,8 +3,6 @@ kind: Kustomization
 resources:
 - ../../base
 images:
-- name: 685766701737.dkr.ecr.ap-northeast-1.amazonaws.com/test
-  newTag: fe_0.0.8
 - name: 812675885124.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo
   newTag: fe_0.0.9
 secretGenerator:
