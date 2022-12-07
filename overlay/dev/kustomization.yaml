@@ -5,6 +5,8 @@ resources:
 images:
 - name: 812675885124.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo
   newTag: fe_0.0.9
+- name: 812675885124.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo1
+  newTag: fe_0.0.2
 secretGenerator:
 - behavior: merge
   envs:
